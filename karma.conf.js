@@ -1,5 +1,11 @@
 // Karma configuration
-// Generated on Sun Jan 24 2016 23:04:27 GMT+0200 (EET)
+
+var path = require('path');
+var webpackConfig = require('./webpack.config');
+var entry = path.resolve(webpackConfig.context, webpackConfig.entry)
+var preprocessors = {};
+preprocessors[entry] = ['webpack'];
+
 
 module.exports = function(config) {
   config.set({
@@ -10,12 +16,12 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha'],
+    frameworks: ['mocha', 'chai'],
 
 
     // list of files / patterns to load in the browser
-    files: [
-    ],
+    files: [entry],
+    webpack: webpackConfig,
 
 
     // list of files to exclude
@@ -25,15 +31,17 @@ module.exports = function(config) {
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: {
-    },
+    preprocessors: preprocessors,
 
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
-
+    reporters: ['progress', 'html'],
+    htmlReporter: {
+      outputDir: 'test_results',
+      focusOnFailures: false,
+    },
 
     // web server port
     port: 9876,
@@ -63,6 +71,14 @@ module.exports = function(config) {
 
     // Concurrency level
     // how many browser should be started simultaneous
-    concurrency: Infinity
+    concurrency: Infinity,
+
+    plugins: [
+      require('karma-webpack'),
+      'karma-chai',
+      'karma-mocha',
+      'karma-chrome-launcher',
+      'karma-html-reporter'
+    ]
   })
 }

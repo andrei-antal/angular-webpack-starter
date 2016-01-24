@@ -3,14 +3,16 @@ var webpack = require('webpack');
 
 var config = {
   context : path.join(__dirname, 'app'),
-  entry: {
-    app: './app.js'
-  },
+  entry: './app.js',
   output: {
     path: path.join(__dirname, 'app'),
     filename: 'bundle.js'
   },
-  plugins: [],
+  plugins: [
+    new webpack.DefinePlugin({
+      RUN_TEST: process.env.NODE_ENV === 'test'
+    })
+  ],
   devtool: 'source-map',
   module: {
     loaders: [
