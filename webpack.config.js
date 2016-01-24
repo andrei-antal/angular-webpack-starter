@@ -18,9 +18,6 @@ var config = {
         test: /\.js$/,
         loader: 'babel',
         exclude: /node_modules/,
-        query: {
-          presets: ['es2015']
-        }
       },
       {
         test: /(\.scss)|(\.css)$/,
@@ -37,8 +34,14 @@ var config = {
 
 if (process.env.NODE_ENV == 'production') {
   config.output.path = path.join(__dirname, 'dist');
-  config.plugins.push(new webpack.optimize.UglifyJsPlugin());
-  config.devtool = '';
+  config.plugins.push(new webpack.optimize.UglifyJsPlugin({
+    compress: {
+      drop_console: true
+    },
+    output: {
+      comments: false
+    }
+  }));
 }
 
 module.exports = config;
