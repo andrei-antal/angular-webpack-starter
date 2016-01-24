@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node_modules/webpack/bin/webpack.js",
     "lint": "node_modules/eslint/bin/eslint.js app --ext .js"
   },
   "repository": {
