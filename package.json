@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "start": "node node_modules/webpack-dev-server/bin/webpack-dev-server",
+    "build": "NODE_ENV=production node node_modules/webpack/bin/webpack && cp app/index.html dist/index.html",
     "lint": "node node_modules/eslint/bin/eslint app --ext .js"
   },
   "repository": {

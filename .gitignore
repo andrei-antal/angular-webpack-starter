@@ -1,9 +1,6 @@
 *.log
 .npmrc
 .idea/
-*.sublime-project
-*.sublime-workspace
-.tmp/
-.sass-cache/
 node_modules/
 .DS_Store
+dist

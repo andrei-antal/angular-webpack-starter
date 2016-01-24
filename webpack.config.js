@@ -1,6 +1,7 @@
 var path = require('path');
+var webpack = require('webpack');
 
-module.exports = {
+var config = {
   context : path.join(__dirname, 'app'),
   entry: {
     app: './app.js'
@@ -9,6 +10,7 @@ module.exports = {
     path: path.join(__dirname, 'app'),
     filename: 'bundle.js'
   },
+  plugins: [],
   devtool: 'source-map',
   module: {
     loaders: [
@@ -32,3 +34,11 @@ module.exports = {
     inline: true
   }
 };
+
+if (process.env.NODE_ENV == 'production') {
+  config.output.path = path.join(__dirname, 'dist');
+  config.plugins.push(new webpack.optimize.UglifyJsPlugin());
+  config.devtool = '';
+}
+
+module.exports = config;
