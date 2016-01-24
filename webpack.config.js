@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var config = {
   context : path.join(__dirname, 'app'),
@@ -11,6 +12,9 @@ var config = {
   plugins: [
     new webpack.DefinePlugin({
       RUN_TEST: process.env.NODE_ENV === 'test'
+    }),
+    new ExtractTextPlugin("style.css", {
+      allChunks: true
     })
   ],
   devtool: 'source-map',
@@ -23,7 +27,7 @@ var config = {
       },
       {
         test: /(\.scss)|(\.css)$/,
-        loader: 'style!css!autoprefixer?browsers=last 2 version!sass'
+        loader: ExtractTextPlugin.extract('style','!css!autoprefixer?browsers=last 2 version!sass')
       }
     ]
   },

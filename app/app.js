@@ -8,7 +8,7 @@ angular.module('app', [ngMaterial]);
 console.log('here1');
 
 if (RUN_TEST) {
-  require('angular-mocks/angular-mocks');
+
   describe('a test suite', () => {
     it('should pass', () => {
       expect(true).to.be.true;
