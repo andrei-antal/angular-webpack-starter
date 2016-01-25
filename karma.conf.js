@@ -79,6 +79,9 @@ module.exports = function(config) {
       'karma-mocha',
       'karma-chrome-launcher',
       'karma-html-reporter'
-    ]
+    ],
+    webpackMiddleware: {
+      noInfo: true
+    }
   })
 }

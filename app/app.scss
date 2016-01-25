@@ -1,4 +1,13 @@
 body {
-  color: red;
-  user-select: none;
+  // test scss
+  .title {
+    padding: 20px;
+    font-size: 28px;
+    color: red;
+    user-select: none;
+  }
+}
+// override material style
+md-card {
+  background-color: lightblue;
 }
