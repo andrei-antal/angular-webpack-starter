@@ -1,16 +1,14 @@
 # angular-webpack-starter1
 
-An example Angular application using webpck for module management and packing.
-In order to run the application and install dependencies, ```node``` with ```npm``` should be installed. Node 4 and npm 3 are recommanded. 
+This is an example Angular application using [Webpack](https://webpack.github.io/) for module management and packing.
+In order to install dependencies and run the application ```node``` with ```npm``` should be installed. Node 4 and npm 3 are recommanded.
 
-To install dependencies run: 
+All the dependencies required for the build system, testing and so on are managed with npm and defined in [package.json](https://github.com/andreiantal/angular-webpack-starter1/blob/master/package.json). They can be installed with:
 ```
 npm install
 ```
 
 ###Tools used:
-
-For a full list of installed packages, please view [package.json](https://github.com/andreiantal/angular-webpack-starter1/blob/master/package.json)
 
 Frontend:
  - ```Angular``` 1.4.9
@@ -18,11 +16,11 @@ Frontend:
  - ```ngAnimate``` & ```ngAria``` (required dependencies)
 
 Dev tools:
- - ```webpack``` & ```webpack dev server``` for package management and js bundling
+ - ```webpack``` & ```webpack dev server``` for package management and js bundling and development server
  - ```babel``` for es6 transpiling
  - ```node-sass```for SASS preprocessing
  - ```style-loader```, ```css-loader```, ```sass-loader``` and ```autoprefixer-loader``` for CSS bundling
- - ```eslint``` for code linting, using ```airbnb``` style guide
+ - ```eslint``` for code linting using [airbnb](https://github.com/airbnb/javascript) style guide
  - testing
    - test runner: ```karma``` with ```chrome-launcher```
    - test framework: ```mocha```
@@ -31,7 +29,7 @@ Dev tools:
 
 ###Configured tasks
 
-The project uses NPM Scripts for running tasks. In order to run a task just enter the the command in the console. Please view the ```scripts``` section of  [package.json](https://github.com/andreiantal/angular-webpack-starter1/blob/master/package.json) for a detaild list of tasks.
+The project uses [NPM Scripts](https://docs.npmjs.com/misc/scripts) for running tasks. In order to run a task just enter the the command in the console. Please view the ```scripts``` section of  [package.json](https://github.com/andreiantal/angular-webpack-starter1/blob/master/package.json) for a detaild list of tasks.
 
 ####Running the app
 
@@ -55,7 +53,7 @@ This bundles the application code, uglyfing and minifying it. The result can be 
 npm test
 ```
 
-This launches the Karma test runner with chrome as te defaul browser. A visual representation for the state of the tests can be found in ```test_results```, filed by browser.
+This launches the Karma test runner with chrome as te defaul browser. A visual representation for the state of the tests can be found in ```test_results```, filed by browser. Karma will automatically watch the files and rerun tests when files change.
 
 ####Lint the code
 
