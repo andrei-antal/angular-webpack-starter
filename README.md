@@ -25,6 +25,8 @@ Dev tools:
    - test runner: ```karma``` with ```chrome-launcher```
    - test framework: ```mocha```
    - test assertion library: ```chai```
+   - test spies, stubs and mocks: ```sinon```
+   - test coverage: ```istambul``` (TODO)
 
 
 ###Configured tasks
@@ -65,4 +67,4 @@ This command runs ```eslint``` on the code and highlights any errors or warning,
 
 ###Others
 
-The app uses ```.editorconfig``` in order to have an unified programming experience across diferent IDE's and editors. 
+The app uses ```.editorconfig``` in order to have an unified programming experience across diferent IDE's and editors.
