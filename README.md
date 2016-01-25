@@ -64,3 +64,7 @@ npm run lint
 ```
 
 This command runs ```eslint``` on the code and highlights any errors or warning, if any. Can be later configured for as a pre-commit requirement.
+
+###Others
+
+The app uses ```.editorconfig``` in order to have an unified programming experience across diferent IDE's and editors. 
