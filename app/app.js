@@ -1,10 +1,8 @@
 import angular from 'angular';
-import ngMaterial from 'angular-material';
 
-require('angular-material/angular-material.scss');
 require('./app.scss');
 
-angular.module('app', [ngMaterial]).run(() => {
+angular.module('app', []).run(() => {
   console.log('Angular runs');
 });
 
