@@ -11,9 +11,7 @@ npm install
 ###Tools used:
 
 Frontend:
- - ```Angular``` 1.4.9
- - ```Angular Material``` 1.0.2
- - ```ngAnimate``` & ```ngAria``` (required dependencies)
+ - ```Angular``` 1.5.6
 
 Dev tools:
  - ```webpack``` & ```webpack dev server``` for package management and js bundling and development server
